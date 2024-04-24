@@ -1,5 +1,5 @@
 import IngredientsWithQuantity from "../Ingredients/IngredientsWithQuantity";
-import { StepType } from "./StepType";
+import { StepType } from "../../types/StepType";
 
 export const Step = ({ etape }: { etape: StepType }) => {
   return (

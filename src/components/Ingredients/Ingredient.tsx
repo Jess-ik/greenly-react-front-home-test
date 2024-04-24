@@ -1,4 +1,5 @@
-import { IngredientType } from "./IngredientType";
+import { IngredientType } from "../../types/IngredientType";
+
 
 export const Ingredient = ({
   ingredient,

@@ -1,4 +1,4 @@
-import { TagType } from "./TagType";
+import { TagType } from "../types/TagType";
 
 export const summer: TagType = {
   id: "summer",

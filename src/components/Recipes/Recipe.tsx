@@ -1,4 +1,4 @@
-import { RecipeType } from "./RecipeType";
+import { RecipeType } from "../../types/RecipeType";
 import Steps from "../Steps/Steps";
 import IngredientsWithQuantity from "../Ingredients/IngredientsWithQuantity";
 import { useState } from "react";

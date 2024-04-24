@@ -1,5 +1,5 @@
 import { Tag } from "./Tag";
-import { TagType } from "./TagType";
+import { TagType } from "../../types/TagType";
 
 export const Tags = ({ tags }: { tags: TagType[] }) => {
   return (

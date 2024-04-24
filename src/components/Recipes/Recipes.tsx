@@ -1,4 +1,4 @@
-import { ListOfRecipes } from "./RecipeType";
+import { ListOfRecipes } from "../../types/RecipeType";
 import Recipe from "./Recipe";
 
 export const Recipes = ({ recipes }: { recipes: ListOfRecipes }) => {
