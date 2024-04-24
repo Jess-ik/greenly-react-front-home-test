@@ -50,7 +50,7 @@ export const Recipe = ({ recipe }: { recipe: RecipeType }) => {
             justifyContent: "center",
           }}
         >
-          <Tags tags={recipe.tags} />
+          {/* <Tags tags={recipe.tags} /> */}
         </div>
         <div
           style={{

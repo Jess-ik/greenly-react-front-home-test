@@ -1,7 +1,8 @@
 import { Tag } from "./Tag";
 import { TagType } from "../../types/TagType";
 
-export const Tags = ({ tags }: { tags: TagType[] }) => {
+export const Tags = ({ tags, handleClick }: { tags: TagType[], handleClick: (tag: TagType) => void
+}) => {
   return (
     <div
       style={{
@@ -13,8 +14,8 @@ export const Tags = ({ tags }: { tags: TagType[] }) => {
         justifyContent: "center",
       }}
     >
-      {tags.map((obj) => (
-        <Tag tag={obj} />
+      {tags.map((obj, index) => (
+        <Tag key={index} tag={obj}  handleClick={handleClick}/>
       ))}
     </div>
   );

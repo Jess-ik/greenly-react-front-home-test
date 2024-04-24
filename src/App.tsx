@@ -15,7 +15,7 @@ export default function App() {
 	const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
 	// Handle storing/removing tags on click
-  const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>, tag: TagType) => {
+  const handleClick = (tag: TagType) => {
     // if tag already stored, remove it
     if (selectedTags.includes(tag.id)) {
       setSelectedTags(prevTags => prevTags.filter(item => item !== tag.id));
@@ -38,33 +38,8 @@ export default function App() {
 	return (
 		<div className="App">
 			Liste des recettes
-			{/* <Tags tags={tagList} /> */}
-			<div
-				style={{
-					margin: "10px",
-					padding: "5px",
-					borderRadius: "3px",
-					display: "flex",
-					flexDirection: "row",
-					justifyContent: "center",
-				}}>
-				{tagList.map((tag) => (
-					<div
-						style={{
-							margin: "10px",
-							padding: "5px",
-							borderRadius: "3px",
-							display: "flex",
-							flexDirection: "row",
-							justifyContent: "center",
-							backgroundColor: `${tag.color}`,
-            }}
-            onClick={(event) => handleClick(event, tag)}
->
-						{tag.name.fr}
-					</div>
-				))}
-			</div>
+			<Tags tags={tagList} handleClick={handleClick}  /> 
+			
 			{/* 
       <>
 				{" "}
