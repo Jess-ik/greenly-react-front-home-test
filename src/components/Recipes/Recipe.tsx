@@ -3,8 +3,9 @@ import Steps from "../Steps/Steps";
 import IngredientsWithQuantity from "../Ingredients/IngredientsWithQuantity";
 import { useState } from "react";
 import { Tags } from "../Tags/Tags";
+import { TagType } from "../../types/TagType";
 
-export const Recipe = ({ recipe }: { recipe: RecipeType }) => {
+export const Recipe = ({ recipe, handleClick }: { recipe: RecipeType, handleClick: (tag: TagType) => void }) => {
   const [showSteps, setShowSteps] = useState<Boolean>(false);
   const [showIngredients, setShowIngredients] = useState<boolean>(false);
 
@@ -50,7 +51,7 @@ export const Recipe = ({ recipe }: { recipe: RecipeType }) => {
             justifyContent: "center",
           }}
         >
-          {/* <Tags tags={recipe.tags} /> */}
+          <Tags tags={recipe.tags} handleClick={handleClick}/>
         </div>
         <div
           style={{

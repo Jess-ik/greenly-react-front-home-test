@@ -62,7 +62,7 @@ export default function App() {
       {filter === "vegan" && <Recipes recipes={veganRecipes} />}
 			</> 
       */}
-			<Recipes recipes={allRecipes} />
+			<Recipes recipes={allRecipes} handleClick={handleClick} />
 		</div>
 	);
 }
