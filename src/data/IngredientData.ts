@@ -71,3 +71,43 @@ export const cucumber: IngredientType = {
   type: "vegetables",
   unit: "unit",
 };
+
+export const salmon: IngredientType = {
+  name: "saumon",
+  type: "fish",
+  unit: "g",
+  prefix: "de",
+};
+
+export const mustard: IngredientType = {
+  name: "moutard",
+  type: "condiment",
+  unit: "cs",
+  prefix: "de",
+};
+
+export const oliveOil: IngredientType = {
+  name: "huile d'olive",
+  type: "condiment",
+  unit: "cc",
+  prefix: "d'",
+};
+
+export const lemon: IngredientType = {
+  name: "citron",
+  type: "fruits",
+  unit: "unit",
+};
+
+export const potatoes: IngredientType = {
+  name: "pommes de terre",
+  type: "vegetables",
+  unit: "g",
+  prefix: "de",
+};
+
+export const asparagus: IngredientType = {
+  name: "asperges",
+  type: "vegetables",
+  unit: "unit",
+};

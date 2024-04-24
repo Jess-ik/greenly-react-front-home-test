@@ -14,21 +14,28 @@ import {
   salad,
   cucumber,
   feta,
+  salmon,
+  mustard,
+  potatoes,
+  asparagus
 } from "./IngredientData";
 
 import {
   stepsFondantChocolat,
   stepsPavlova,
   stepsTarteAuxPoires,
+  stepsSalmon,
 } from "./StepData";
 
 import {
-  appetizer,
-  autumn,
-  dessert,
+  spring,
   summer,
-  vegan,
+  autumn,
   winter,
+  appetizer,
+  mainCourse,
+  dessert,
+  vegan,
 } from "./TagData";
 
 const pavlova: RecipeType = {
@@ -98,11 +105,29 @@ const waldorfSalad: RecipeType = {
   tags: [appetizer, summer, vegan],
 };
 
+//Add new recipe
+const salmonMustard: RecipeType = {
+  nom: "Saumon à la moutard",
+  description: "une recette de printemps, facile à réaliser et idéale à partager : du saumon à la moutarde, des pommes de terre rôties et des asperges grillées. ",
+  imageURL:
+    "https://i0.wp.com/clemfoodie.com/wp-content/uploads/2024/04/saumon-moutarde-1-scaled.jpg?resize=1638%2C2048&ssl=1",
+  ingredients: [salmon, mustard, potatoes, asparagus],
+  ingredientsWithQuantity: [
+    { ingredient: salmon, quantity: 400, unit: "g" },
+    { ingredient: mustard, quantity: 1, unit: "cs" },
+    { ingredient: potatoes, quantity: 600, unit: "g" },
+    { ingredient: asparagus, quantity: 20 },
+  ],
+  etapes: stepsSalmon,
+  tags: [mainCourse, spring],
+};
+
 export const allRecipes: ListOfRecipes = [
   pavlova,
   fondantChocolat,
   pearPie,
   waldorfSalad,
+  salmonMustard
 ];
 
 export const summerRecipes = allRecipes.filter((recipe) => {
