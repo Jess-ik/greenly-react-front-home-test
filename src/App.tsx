@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./reset.css";
 import "./styles.css";
 import { TagType } from "./types/TagType";
 import { allRecipes } from "./data/RecipeData";
@@ -46,12 +47,12 @@ export default function App() {
     <div className="App">
       <h1>Livre des recettes Grennly</h1>
 			Liste des recettes
-      <Tags tags={tagList} handleClick={handleClick} /> 
+      <Tags tags={tagList} handleClick={handleClick} selectedTags={selectedTags} /> 
       {/* TO DO : find solution to resolve type error to show tag.name.fr instead of tag.id */}
       <p>Voici les recettes pour : {selectedTags.map((tag) => <span>{tag} </span>)}</p>
 
       
-			<Recipes recipes={filteredRecipes()} handleClick={handleClick} />
+			<Recipes recipes={filteredRecipes()} handleClick={handleClick} selectedTags={selectedTags}/>
 		</div>
 	);
 }

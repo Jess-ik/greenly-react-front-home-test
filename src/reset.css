@@ -1,0 +1,122 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles (bullets and numbering) */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove default padding */
+blockquote,
+ol,
+ul {
+  padding: 0;
+}
+
+/* Remove default quotes */
+blockquote,
+q {
+  quotes: none;
+}
+
+/* Remove default styles */
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: '';
+  content: none;
+}
+
+/* Reset all headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* Reset all form elements */
+button,
+input,
+optgroup,
+select,
+textarea {
+  padding: 0;
+  line-height: inherit;
+  color: inherit;
+  background-color: transparent;
+  border-radius: 0;
+  border-width: 0;
+  border-color: currentColor;
+  border-style: solid;
+}
+
+/* Reset buttons */
+button {
+  overflow: visible;
+}
+
+/* Remove default appearance */
+button,
+select {
+  text-transform: none;
+}
+
+/* Remove border-radius */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: none;
+}
+
+/* Restore the focus styles unset by the previous rule */
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/* Reset form element states */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: none;
+}
+
+/* Remove inner padding and border in Firefox 4+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+/* Reset table border-collapse */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}

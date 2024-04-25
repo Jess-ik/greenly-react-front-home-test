@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Tags } from "../Tags/Tags";
 import { TagType } from "../../types/TagType";
 
-export const Recipe = ({ recipe, handleClick }: { recipe: RecipeType; handleClick: (tag: TagType) => void }) => {
+export const Recipe = ({ recipe, handleClick, selectedTags }: { recipe: RecipeType; handleClick: (tag: TagType) => void, selectedTags: any }) => {
 	const [showSteps, setShowSteps] = useState<Boolean>(false);
 	const [showIngredients, setShowIngredients] = useState<boolean>(false);
 
@@ -14,19 +14,10 @@ export const Recipe = ({ recipe, handleClick }: { recipe: RecipeType; handleClic
 		<div className="recipe-card">
 			<img src={recipe.imageURL} alt={recipe.nom} />
 			<div className="recipe-card-info">
-				<h2>Nom de la recette: {recipe.nom}</h2>
-				<div
-					style={{
-						padding: "10px",
-					}}>
-					{recipe.description}
-				</div>
-				<div
-					style={{
-						display: "flex",
-						justifyContent: "center",
-					}}>
-					<Tags tags={recipe.tags} handleClick={handleClick} />
+				<h2>{recipe.nom}</h2>
+				<p>{recipe.description}</p>
+				<div className="recipe-tags-container">
+					<Tags tags={recipe.tags} handleClick={handleClick} selectedTags={selectedTags} />
 				</div>
 				<div
 					style={{
