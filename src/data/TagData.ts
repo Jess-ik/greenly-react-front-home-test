@@ -8,7 +8,7 @@ export const spring: TagType = {
     en: "spring",
   },
   type: "saison",
-  color: "pink",
+  color: "#FBD0D0",
 };
 
 export const summer: TagType = {
@@ -18,7 +18,7 @@ export const summer: TagType = {
     en: "summer",
   },
   type: "saison",
-  color: "yellow",
+  color: "#F9E9BD",
 };
 
 export const autumn: TagType = {
@@ -28,7 +28,7 @@ export const autumn: TagType = {
     en: "autumn",
   },
   type: "saison",
-  color: "orange",
+  color: "#ECBEAB",
 };
 
 export const winter: TagType = {
@@ -38,7 +38,7 @@ export const winter: TagType = {
     en: "winter",
   },
   type: "saison",
-  color: "blue",
+  color: "#B6E0EA",
 };
 
 export const vegan: TagType = {
@@ -48,7 +48,7 @@ export const vegan: TagType = {
     en: "vegan",
   },
   type: "diet",
-  color: "green",
+  color: "#B8DDB6",
 };
 
 export const appetizer: TagType = {
@@ -58,7 +58,7 @@ export const appetizer: TagType = {
     en: "appetizer",
   },
   type: "plateType",
-  color: "purple",
+  color: "#D0B5D7",
 };
 
 //Add main course tag
@@ -69,17 +69,17 @@ export const mainCourse: TagType = {
     en: "main course",
   },
   type: "plateType",
-  color: "brown",
+  color: "#F7B1BC",
 };
 
 export const dessert: TagType = {
   id: "dessert",
   name: {
     fr: "dessert",
-    en: "appetizer",
+    en: "desert",
   },
   type: "plateType",
-  color: "#e320bd",
+  color: "#DFC0AF",
 };
 
 

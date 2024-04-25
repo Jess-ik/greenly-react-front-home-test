@@ -5,8 +5,8 @@ export const Tag = ({ tag, handleClick, selectedTags }: { tag: TagType; handleCl
 		<div
 			className="tag"
 			style={{
-				borderColor: selectedTags.includes(tag.id) ? tag.color : "#0f1118",
-				backgroundColor: selectedTags.includes(tag.id) ? tag.color : "transparent",
+				borderColor: selectedTags.includes(tag.name.fr) ? tag.color : "#0f1118",
+				backgroundColor: selectedTags.includes(tag.name.fr) ? tag.color : "transparent",
 			}}
 			onClick={() => handleClick(tag)}>
 			{tag.name.fr}
