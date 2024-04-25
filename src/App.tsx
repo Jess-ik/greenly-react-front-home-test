@@ -49,7 +49,7 @@ export default function App() {
 		<div className="App">
 			Liste des recettes
 			<Tags tags={tagList} handleClick={handleClick}  /> 
-			
+      <p>Voici les recettes pour : {selectedTags.map((tag) => <span>{tag} </span>)}</p>
 			{/* 
       <>
 				{" "}
