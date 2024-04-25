@@ -1,20 +1,17 @@
 import { useEffect, useState } from "react";
 import "./styles.css";
-import Recipes from "./components/Recipes/Recipes";
-import { allRecipes, sugarRecipes, summerRecipes, dessertRecipes, noEggsRecipes, chocolateRecipes, autumnRecipes, veganRecipes, chocolateDessertRecipes } from "./data/RecipeData";
-
+import { TagType } from "./types/TagType";
+import { allRecipes } from "./data/RecipeData";
 import { tagList } from "./data/TagData";
 import { Tags } from "./components/Tags/Tags";
-import { Tag } from "./components/Tags/Tag";
-import { TagType } from "./types/TagType";
-import { RecipeType } from "./types/RecipeType";
+import Recipes from "./components/Recipes/Recipes";
+
+
 
 export default function App() {
-	const [filter, setFilter] = useState<string>("all");
 
 	// Store selected tags
 	const [selectedTags, setSelectedTags] = useState<string[]>([]);
-
 
 	// Handle storing/removing tags on click
   const handleClick = (tag: TagType) => {
@@ -46,32 +43,14 @@ export default function App() {
 
 
 	return (
-		<div className="App">
+    <div className="App">
+      <h1>Livre des recettes Grennly</h1>
 			Liste des recettes
-			<Tags tags={tagList} handleClick={handleClick}  /> 
+      <Tags tags={tagList} handleClick={handleClick} /> 
+      {/* TO DO : find solution to resolve type error to show tag.name.fr instead of tag.id */}
       <p>Voici les recettes pour : {selectedTags.map((tag) => <span>{tag} </span>)}</p>
-			{/* 
-      <>
-				{" "}
-				<button onClick={() => setFilter("chocolate")}>Chocolat</button>
-				<button onClick={() => setFilter("sugar")}>Sucre</button>
-				<button onClick={() => setFilter("summer")}>Eté</button>
-				<button onClick={() => setFilter("dessert")}>Dessert</button>
-				<button onClick={() => setFilter("chocolate dessert")}>dessert chocolat</button>
-				<button onClick={() => setFilter("eggs free")}>Sans Oeufs</button>
-				<button onClick={() => setFilter("autumn")}> Autumn</button>
-        <button onClick={() => setFilter("vegan")}> Vegan</button>
-        {filter === "all" && <Recipes recipes={allRecipes} />}
-			{filter === "sugar" && <Recipes recipes={sugarRecipes} />}
-			{filter === "summer" && <Recipes recipes={summerRecipes} />}
-			{filter === "dessert" && <Recipes recipes={dessertRecipes} />}
-			{filter === "chocolate dessert" && <Recipes recipes={chocolateDessertRecipes} />}
-			{filter === "eggs free" && <Recipes recipes={noEggsRecipes} />}
-			{filter === "chocolate" && <Recipes recipes={chocolateRecipes} />}
-			{filter === "autumn" && <Recipes recipes={autumnRecipes} />}
-      {filter === "vegan" && <Recipes recipes={veganRecipes} />}
-			</> 
-      */}
+
+      
 			<Recipes recipes={filteredRecipes()} handleClick={handleClick} />
 		</div>
 	);
