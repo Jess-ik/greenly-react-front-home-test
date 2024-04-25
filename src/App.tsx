@@ -7,7 +7,6 @@ import { tagList } from "./data/TagData";
 import { Tags } from "./components/Tags/Tags";
 import Recipes from "./components/Recipes/Recipes";
 import Logo from "./components/Logo/Logo";
-import { Tag } from "./components/Tags/Tag";
 
 export default function App() {
 	// Store selected tags
@@ -23,14 +22,14 @@ export default function App() {
 			setSelectedTags((prevTags) => [...prevTags, tag.name.fr]);
 		}
 	};
-
+  // Handle filters reset
 	const resetFilter = () => {
 		setSelectedTags([]);
 	};
 
-	useEffect(() => {
-		console.log("Voici les tags sélectionnés : " + selectedTags);
-	}, [selectedTags]);
+	// useEffect(() => {
+	// 	console.log("Voici les tags sélectionnés : " + selectedTags);
+	// }, [selectedTags]);
 
 	// Handle recipes filtering
 	const filteredRecipes = () => {
@@ -51,7 +50,7 @@ export default function App() {
 				<Logo /> Le livre des recettes
 			</h1>
 
-			<div className="filter-container">
+			<section className="filter-container">
 				<h2>De quoi avez-vous envie ?</h2>
 				<div className="filters">
 					<div className="filter-cat">
@@ -64,17 +63,18 @@ export default function App() {
 						<p>Filtrer par régime :</p> <Tags tags={tagList.filter((tag) => tag.type === "diet")} handleClick={handleClick} selectedTags={selectedTags} />
 					</div>
 				</div>
-			</div>
+			</section>
 
-			<div className="results-container">
+			<section className="results-container">
 				{selectedTags.length > 0 && (
 					<div className="results-info">
 						<div className="results-tags">
 							<h3>Voici les recettes pour :</h3>
-
-							{selectedTags.map((tag, index) => (
-								<span key={index}>{tag}</span>
-							))}
+							<div>
+								{selectedTags.map((tag, index) => (
+									<span key={index}>{tag}</span>
+								))}
+							</div>
 						</div>
 
 						<button className="reset-button" onClick={resetFilter}>
@@ -88,7 +88,7 @@ export default function App() {
 						<p>Oh non... 😢 Nous n'avons pas encore de recette disponible pour les tags sélectionnés. </p>
 					</div>
 				)}
-			</div>
+			</section>
 
 			<Recipes recipes={filteredRecipes()} handleClick={handleClick} selectedTags={selectedTags} />
 		</div>
