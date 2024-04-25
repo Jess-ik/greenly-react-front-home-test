@@ -79,21 +79,44 @@ p {
   flex-wrap: wrap;
 }
 
-.recipes-results {
+.results-info {
   margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
 }
 
-.recipes-results h3{
+.results-tags{
   display: flex;
-  gap: .5rem;
 }
-.recipes-results span{
+
+.results-info h3 {
+  margin-right: 1rem;
+}
+
+
+
+.results-info span{
   font-weight: 300;
 }
 
-.recipes-results span:not(:last-child)::after {
+.results-info span:not(:last-child)::after {
   content: "•";
   margin:0 0.5em;
+}
+
+.reset-button {
+  border: 1px solid grey;
+  padding: .5rem 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.noresults-container{
+  margin: 0 auto;
+  text-align: center;
+  padding: 4rem 0;
 }
 
 @media screen and (min-width: 1280px) {

@@ -24,6 +24,10 @@ export default function App() {
 		}
 	};
 
+	const resetFilter = () => {
+		setSelectedTags([]);
+	};
+
 	useEffect(() => {
 		console.log("Voici les tags sélectionnés : " + selectedTags);
 	}, [selectedTags]);
@@ -62,16 +66,31 @@ export default function App() {
 				</div>
 			</div>
 
-			<div className="recipes-results">
-				<h3>
-          Voici les recettes pour :
-          <div>{selectedTags.map((tag, index) => (
-            <span key={index}>{tag}</span>
-					))}</div>
-				</h3>
+			<div className="results-container">
+				{selectedTags.length > 0 && (
+					<div className="results-info">
+						<div className="results-tags">
+							<h3>Voici les recettes pour :</h3>
 
-				<Recipes recipes={filteredRecipes()} handleClick={handleClick} selectedTags={selectedTags} />
+							{selectedTags.map((tag, index) => (
+								<span key={index}>{tag}</span>
+							))}
+						</div>
+
+						<button className="reset-button" onClick={resetFilter}>
+							X Réinitialiser la recherche
+						</button>
+					</div>
+				)}
+
+				{filteredRecipes().length === 0 && (
+					<div className="noresults-container">
+						<p>Oh non... 😢 Nous n'avons pas encore de recette disponible pour les tags sélectionnés. </p>
+					</div>
+				)}
 			</div>
+
+			<Recipes recipes={filteredRecipes()} handleClick={handleClick} selectedTags={selectedTags} />
 		</div>
 	);
 }
