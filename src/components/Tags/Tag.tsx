@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { TagType } from "../../types/TagType";
 
 export const Tag = ({ tag, handleClick, selectedTags }: { tag: TagType; handleClick: (tag: TagType) => void; selectedTags: any }) => {
