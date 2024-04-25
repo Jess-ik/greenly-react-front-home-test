@@ -7,12 +7,14 @@ import { tagList } from "./data/TagData";
 import { Tags } from "./components/Tags/Tags";
 import { Tag } from "./components/Tags/Tag";
 import { TagType } from "./types/TagType";
+import { RecipeType } from "./types/RecipeType";
 
 export default function App() {
 	const [filter, setFilter] = useState<string>("all");
 
 	// Store selected tags
 	const [selectedTags, setSelectedTags] = useState<string[]>([]);
+
 
 	// Handle storing/removing tags on click
   const handleClick = (tag: TagType) => {
@@ -31,9 +33,17 @@ export default function App() {
 
 	// Handle recipes filtering
 	const filteredRecipes = () => {
-		// if selectedTags empty, show all recipes
-		// else, show recipes that contains every selected tags
-	};
+    // if selectedTags empty, show all recipes
+    if (selectedTags.length === 0) {
+      return allRecipes;
+    } // else filter recipes that contains every selectedtags
+    else {
+      return allRecipes.filter((recipe) => {
+        return selectedTags.every(item => recipe.tags.some(tag => tag.id === item))
+      })
+    }
+  };
+
 
 	return (
 		<div className="App">
@@ -62,7 +72,7 @@ export default function App() {
       {filter === "vegan" && <Recipes recipes={veganRecipes} />}
 			</> 
       */}
-			<Recipes recipes={allRecipes} handleClick={handleClick} />
+			<Recipes recipes={filteredRecipes()} handleClick={handleClick} />
 		</div>
 	);
 }
