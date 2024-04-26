@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Tags } from "../Tags/Tags";
 import { TagType } from "../../types/TagType";
 
-export const Recipe = ({ recipe, handleClick, selectedTags }: { recipe: RecipeType; handleClick: (tag: TagType) => void; selectedTags: any }) => {
+export const Recipe = ({ recipe, handleClick, selectedTags }: { recipe: RecipeType; handleClick: (tag: TagType) => void; selectedTags: string[] }) => {
 	const [showSteps, setShowSteps] = useState<Boolean>(false);
 	const [showIngredients, setShowIngredients] = useState<boolean>(false);
 

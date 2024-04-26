@@ -1,6 +1,6 @@
 import { TagType } from "../../types/TagType";
 
-export const Tag = ({ tag, handleClick, selectedTags }: { tag: TagType; handleClick: (tag: TagType) => void; selectedTags: any }) => {
+export const Tag = ({ tag, handleClick, selectedTags }: { tag: TagType; handleClick: (tag: TagType) => void; selectedTags: string[] }) => {
 	return (
 		<div
 			className="tag"

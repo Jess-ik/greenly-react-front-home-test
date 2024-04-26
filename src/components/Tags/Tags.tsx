@@ -2,7 +2,7 @@ import { Tag } from "./Tag";
 import { TagType } from "../../types/TagType";
 import "./Tags.css";
 
-export const Tags = ({ tags, handleClick, selectedTags }: { tags: TagType[]; handleClick: (tag: TagType) => void, selectedTags: any }) => {
+export const Tags = ({ tags, handleClick, selectedTags }: { tags: TagType[]; handleClick: (tag: TagType) => void, selectedTags: string[] }) => {
 	return (
 		<div className="tags-container">
 			{tags.map((obj, index) => (
